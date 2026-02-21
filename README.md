@@ -314,3 +314,5 @@ This experiment successfully demonstrates:
 - Pattern generation
 
 The experiment builds strong foundational programming skills and prepares students for advanced topics like Data Structures and Algorithms.
+✍ Author
+Dev Anand B.Tech ENTC – Symbiosis Institute of Technology, Pune
