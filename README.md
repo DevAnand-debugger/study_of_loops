@@ -1,12 +1,3 @@
-# 🧪 Experiment – 7  
-## Study of While Loop and For Loop in Python  
-
-**Name:** Dev Anand  
-**PRN:** 25070123039  
-**Batch:** A2  
-
----
-
 # 1️⃣ AIM
 
 To study and implement iterative control structures in Python including:
