@@ -1,392 +1,197 @@
-# study_of_loops
-learning loops in python
-🧪 Experiment – 7
-Study of While Loop and For Loop in Python
-Name: Dev Anand
-PRN: 25070123039
-Batch: A2
-1️⃣ AIM
+# 🧪 Experiment – 7  
+## Study of While Loop and For Loop in Python  
+
+**Name:** Dev Anand  
+**PRN:** 25070123039  
+**Batch:** A2  
+
+---
+
+# 📌 Aim
 
 To study and implement iterative control structures in Python including:
 
-While loop
+- While Loop  
+- For Loop  
+- Break Statement  
+- Continue Statement  
+- Nested Loops  
+- Matrix Operations  
+- Pattern Programs  
+- Mathematical Applications  
 
-For loop
+---
 
-Break statement
+# 📚 Introduction
 
-Continue statement
-
-Nested loops
-
-Applications of loops such as:
-
-Factorial
-
-Fibonacci Series
-
-Palindrome
-
-Armstrong Number
-
-Prime Numbers
-
-Matrix Multiplication
-
-Pattern Programs
-
-2️⃣ OBJECTIVE
-
-To understand iteration in programming.
-
-To learn how repetitive tasks are handled efficiently.
-
-To differentiate between while loop and for loop.
-
-To apply loops in mathematical and logical problems.
-
-To understand nested loops and multidimensional data handling.
-
-3️⃣ INTRODUCTION TO LOOPS
-
-In programming, many problems require repetition of instructions. Instead of writing the same statement multiple times, loops are used to execute a block of code repeatedly until a condition is satisfied.
-
-Loops improve:
-
-Code efficiency
-
-Code readability
-
-Logical thinking
-
-Problem-solving ability
+Loops are used in programming to execute a block of code repeatedly.  
+Instead of writing repetitive statements manually, loops help automate repetition.
 
 Python provides two main types of loops:
 
-While Loop
+1. **While Loop**
+2. **For Loop**
 
-For Loop
+---
 
-4️⃣ WHILE LOOP
-Definition
+# 🔁 While Loop
 
-A while loop repeatedly executes a block of code as long as a specified condition is True.
+### Syntax
 
-It is called an entry-controlled loop because the condition is checked before execution of the loop body.
-
-Syntax
+```python
 while condition:
-    statement(s)
-Working Mechanism
+    statements
+Example: Print Numbers from 1 to 5
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+🔢 Factorial Using While Loop
+n = int(input("Enter the number: "))
+fact = 1
 
-Condition is evaluated.
+while n > 0:
+    fact *= n
+    n -= 1
 
-If True → execute loop body.
+print("Factorial:", fact)
+🔢 Fibonacci Series
+n = int(input("Enter number of terms: "))
+a, b = 0, 1
+i = 0
 
-After execution → condition checked again.
+while i < n:
+    print(a)
+    a, b = b, a + b
+    i += 1
+🔄 Reverse a Number
+num = int(input("Enter a number: "))
+rev = 0
 
-If False → loop terminates.
+while num > 0:
+    digit = num % 10
+    rev = rev * 10 + digit
+    num //= 10
 
-Characteristics of While Loop
+print("Reversed Number:", rev)
+🔍 Palindrome Check (Number)
+n = int(input("Enter a number: "))
+original = n
+rev = 0
 
-Used when number of iterations is not known in advance.
+while n > 0:
+    digit = n % 10
+    rev = rev * 10 + digit
+    n //= 10
 
-Suitable for condition-based repetition.
+if original == rev:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+🔍 Palindrome Check (String)
+s = "madam"
+i, j = 0, len(s) - 1
+is_palindrome = True
 
-Risk of infinite loop if condition never becomes False.
+while i < j:
+    if s[i] != s[j]:
+        is_palindrome = False
+        break
+    i += 1
+    j -= 1
 
-Requires manual initialization and increment/decrement.
-
-Example Applications
-✔ Printing numbers from 1 to N
-✔ Factorial calculation
-✔ Fibonacci series
-✔ Reverse a number
-✔ Palindrome check
-5️⃣ FOR LOOP
-Definition
-
-A for loop is used to iterate over a sequence (range, list, string, tuple, etc.).
-
-It is preferred when the number of iterations is known beforehand.
-
+if is_palindrome:
+    print("Yes")
+else:
+    print("No")
+🔴 Break Statement
+for i in range(1, 10):
+    if i == 3:
+        break
+    print(i)
+🟡 Continue Statement
+i = 1
+while i <= 10:
+    if i == 5:
+        i += 1
+        continue
+    print(i)
+    i += 1
+🔁 For Loop
 Syntax
 for variable in range(start, stop, step):
-    statement(s)
-Range Function
-
-range(start, stop, step)
-
-start → initial value (default 0)
-
-stop → ending value (exclusive)
-
-step → increment/decrement value (default 1)
-
-Example:
-
-range(1,6)
-
-Generates:
-1, 2, 3, 4, 5
-
-Characteristics of For Loop
-
-Used when number of iterations is fixed.
-
-Cleaner and more compact than while loop.
-
-Automatically handles increment.
-
-Reduces chances of infinite loops.
-
-6️⃣ BREAK STATEMENT
-Definition
-
-The break statement immediately terminates the loop even if the condition is True.
-
-Used in:
-
-Searching operations
-
-Exit conditions
-
-Early termination logic
-
-Working:
-When break executes → control goes outside the loop.
-
-7️⃣ CONTINUE STATEMENT
-Definition
-
-The continue statement skips the remaining statements in the current iteration and moves to the next iteration.
-
-Used when:
-
-Certain values need to be ignored.
-
-Filtering logic is required.
-
-Difference from break:
-
-break → exits loop completely.
-
-continue → skips only one iteration.
-
-8️⃣ NESTED LOOPS
-Definition
-
-A loop inside another loop is called a nested loop.
-
-Structure:
-
-for i in range():
-    for j in range():
-        statements
-
-Applications:
-
-Matrix operations
-
-Pattern printing
-
-Multiplication tables
-
-Multi-dimensional arrays
-
-9️⃣ FACTORIAL USING LOOP
-Mathematical Definition
-
-n! = n × (n-1) × (n-2) × ... × 1
-
-Factorial is defined only for non-negative integers.
-
-Example:
-5! = 120
-
-Logic:
-
-Initialize fact = 1
-
-Multiply decreasing values
-
-Stop when number becomes 0
-
-Time Complexity: O(n)
-
-🔟 FIBONACCI SERIES
-Mathematical Definition
-
-Fibonacci sequence is defined as:
-
-F₀ = 0
-F₁ = 1
-Fₙ = Fₙ₋₁ + Fₙ₋₂
-
-Series:
-0 1 1 2 3 5 8 13 ...
-
-Used in:
-
-Computer algorithms
-
-Dynamic programming
-
-Mathematical modeling
-
-Time Complexity: O(n)
-
-1️⃣1️⃣ PALINDROME
-
-A palindrome is a number or string that reads the same forward and backward.
-
-Examples:
-121
-madam
-racecar
-
-Logic:
-
-Reverse the number/string
-
-Compare with original value
-
-1️⃣2️⃣ ARMSTRONG NUMBER
-
-Definition:
-
-A number is an Armstrong number if:
-
-Sum of (each digit raised to power of number of digits) = original number
-
-Example:
-153
-
-1³ + 5³ + 3³ = 153
-
-Also known as Narcissistic number.
-
-1️⃣3️⃣ PRIME NUMBERS
-
-Definition:
-
-A prime number is a number greater than 1 that has only two divisors:
-1 and itself.
-
-Logic Used:
-
-Check divisibility from 2 to n-1.
-
-If divisible → not prime.
-
-If no divisor found → prime.
-
-Time Complexity (basic method): O(n²)
-
-1️⃣4️⃣ MATRICES IN PYTHON
-Definition
-
-A matrix is a two-dimensional data structure represented using lists of lists.
-
-Example:
-
+    statements
+Example: Print 1 to 5
+for i in range(1, 6):
+    print(i)
+➕ Sum of First N Numbers
+n = int(input("Enter a number: "))
+total = 0
+
+for i in range(1, n + 1):
+    total += i
+
+print("Sum:", total)
+🔁 Nested Loop Example
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(i, j)
+🧱 Matrix Multiplication (3×3)
 A = [[1,2,3],
      [4,5,6],
-     [7,8,9]]
+     [1,2,1]]
 
-Access:
-A[row][column]
+B = [[1,1,1],
+     [6,5,4],
+     [3,2,1]]
 
-Matrix Multiplication Theory
+Result = [[0,0,0],
+          [0,0,0],
+          [0,0,0]]
 
-If A is of order (m × n)
-and B is of order (n × p)
+for i in range(3):
+    for j in range(3):
+        for k in range(3):
+            Result[i][j] += A[i][k] * B[k][j]
 
-Then result matrix C will be of order (m × p)
+print("Product of matrices:")
+for row in Result:
+    print(row)
+🔢 Armstrong Number
+num = int(input("Enter a number: "))
+total = 0
+length = len(str(num))
 
-Formula:
+for digit in str(num):
+    total += int(digit) ** length
 
-C[i][j] = Σ A[i][k] × B[k][j]
+if total == num:
+    print("Armstrong")
+else:
+    print("Not Armstrong")
+🔢 Prime Numbers (2 to 50)
+for num in range(2, 50):
+    for j in range(2, num):
+        if num % j == 0:
+            break
+    else:
+        print(num, end=" ")
+⭐ Pattern Programs
+Inverted Right Angle Triangle
+for i in range(5, 0, -1):
+    print("* " * i)
+📊 Conclusion
 
-This requires 3 nested loops:
+This experiment demonstrates:
 
-i → rows
+Loop structures in Python
 
-j → columns
+Mathematical problem-solving
 
-k → multiplication index
-
-Time Complexity: O(n³)
-
-Applications:
-
-Computer graphics
-
-Machine learning
-
-Physics simulations
-
-Engineering calculations
-
-1️⃣5️⃣ PATTERN PROGRAMS
-
-Pattern programs use nested loops to create visual shapes.
-
-Concepts involved:
-
-Loop control
-
-String multiplication
-
-Indentation logic
-
-Space management
-
-Examples:
-
-Pyramid
-
-Inverted pyramid
-
-Right angle triangle
-
-Number patterns
-
-1️⃣6️⃣ DIFFERENCE BETWEEN WHILE AND FOR LOOP
-Feature	While Loop	For Loop
-Condition Based	Yes	Yes
-Known Iterations	No	Yes
-Risk of Infinite Loop	High	Low
-Syntax Simplicity	Moderate	Simple
-Used In	Condition problems	Sequence problems
-1️⃣7️⃣ TIME COMPLEXITY ANALYSIS
-
-Simple loop → O(n)
-
-Nested loop (2 levels) → O(n²)
-
-Matrix multiplication → O(n³)
-
-Prime check (basic) → O(n²)
-
-Understanding time complexity helps in writing efficient programs.
-
-1️⃣8️⃣ CONCLUSION
-
-Through this experiment, the following concepts were successfully studied and implemented:
-
-Iterative control structures
-
-Conditional loop termination
-
-Logical problem solving
-
-Mathematical computations using loops
-
-Nested loop applications
+Nested loops
 
 Matrix operations
 
-Pattern generation
+Logical programming techniques
 
-This experiment strengthens foundational programming logic and prepares for advanced topics such as data structures and algorithms.
+It builds strong foundational knowledge for Data Structures and Algorithms.
