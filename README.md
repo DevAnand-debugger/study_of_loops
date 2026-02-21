@@ -1,3 +1,15 @@
+# Loops in Python
+Learning loops in python
+
+## 👤 Student Details
+
+**Name:** Dev Anand  
+**PRN:** 25070123039  
+**Batch:** A2  
+**Experiment:** 9  
+**Title:** Study of Pandas Library  
+
+---
 # 1️⃣ AIM
 
 To study and implement iterative control structures in Python including:
